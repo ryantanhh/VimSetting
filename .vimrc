@@ -14,8 +14,11 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'mattn/emmet-vim'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -27,7 +30,6 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " different version somewhere else.
 Plugin 'ascenator/L9', {'name': 'newL9'}
 
-Plugin 'Valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -46,10 +48,14 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-
-set autoindent
+let g:EclimCompletionMethod = 'omnifunc'
+autocmd vimenter * NERDTree
+let g:nerdtree_tabs_open_on_console_startup=1
+set ts=4
 set shiftwidth=4
 set softtabstop=4
 set nu
 syntax on
+set shortmess+=c
+set autoindent
 
